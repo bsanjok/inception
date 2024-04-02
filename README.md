@@ -1,7 +1,3 @@
-Certainly! Below is the README file for your GitHub repository based on your provided `docker-compose.yml` configuration:
-
----
-
 # Dockerized WordPress Environment with NGINX, MariaDB, and Additional Services
 
 This repository provides a Docker Compose configuration for setting up a WordPress environment with NGINX as the web server, MariaDB as the database server, and additional services like FTP server, Adminer, Redis, Prometheus, cAdvisor, and a custom site.
