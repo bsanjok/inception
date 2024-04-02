@@ -1,0 +1,127 @@
+version: '3'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    build: ./nginx/
+    ports:
+      - "443:443"
+      - "8090:8090"
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - inception
+    depends_on:
+      - wordpress
+    restart: always
+  
+  mariadb:
+    container_name: mariadb
+    image: mariadb
+    build: ./mariadb/
+    networks:
+      - inception
+    volumes:
+      - mariadb:/var/lib/mysql
+    restart: always
+    env_file:
+      - .env
+  wordpress:
+    container_name: wordpress
+    image: wordpress
+    build: ./wordpress/
+    volumes:
+      - wordpress:/var/www/html
+    networks:
+      - inception
+    depends_on:
+      - mariadb
+    restart: always
+    env_file:
+      - .env
+  ftp_server:
+    container_name: ftp_server
+    image: ftp_server
+    build: ./bonus/ftp_server/
+    networks:
+      - inception 
+    volumes:
+      - wordpress:/var/www/html
+    ports:
+      - "21:21"
+      - "21100-21100:21100-21100"
+      - "20:20"
+    restart: always
+    env_file:
+      - .env
+  adminer:
+    container_name: adminer
+    image: adminer
+    build: ./bonus/adminer/
+    depends_on:
+      - mariadb
+    restart: always
+    networks:
+      - inception
+    env_file:
+      - .env
+  redis:
+    container_name: redis
+    image: redis
+    build: ./bonus/redis/
+    depends_on:
+      - wordpress
+    networks:
+      - inception
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - wordpress:/var/www/html
+  prometheus:
+    container_name: prometheus
+    image: prometheus
+    build: ./bonus/prometheus/
+    networks:
+      - inception
+    ports:
+      - "9090:9090"
+    restart: always
+  cadvisor:
+    container_name: cadvisor
+    image: cadvisor
+    build: ./bonus/cadvisor/
+    networks:
+      - inception
+    ports:
+      - "8080:8080"
+    restart: always
+  mysite:
+    container_name: mysite
+    image: mysite
+    build: ./bonus/mysite/
+    networks:
+      - inception
+    ports:
+      - "8082:8082"
+    restart: always
+volumes:
+  wordpress:
+    name: wordpress
+    driver_opts:
+      type: none
+      o: bind
+      device: $HOME/data/wordpress
+  mariadb:
+    name: mariadb
+    driver_opts:
+      type: bind
+      o: bind
+      device: $HOME/data/mariadb
+
+networks:
+  inception:
+    name: inception
+    driver: bridge
+    

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <title>My Portfolio</title>
+</head>
+<body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+    <div class="container-fluid">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact Card</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gallery">Gallery</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#experiences">Experiences</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div id="contact" class="container-fluid bg-info text-white" style="padding:80px 20px;">
+    <div class="container-fluid pt-5 bg-info pb-3 text-black text-center">
+        <img src="assets/img/prof.jpeg" class="img-fluid rounded-circle mx-auto d-block" style="width: 10%; height:10%" alt="Sanjok Bhatta">
+        <h1>Sanjok Bhatta</h1>
+        <p>This is my <kbd>portfolio</kbd> for the inception project.</p>
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-github fa-lg"></i> github.com/bsanjok</li>
+            <li class="list-inline-item"><i class="fa fa-linkedin fa-lg"></i> linkedin.com/bsanjok</li>
+            <li class="list-inline-item"><i class="fa fa-globe fa-lg"></i> sanjokbhatta.com.np</li>
+        </ul>
+        <ul class="list-inline">
+            <li class="list-inline-item"><i class="fa fa-envelope fa-lg"></i> info@sanjokbhatta.com.np</li>
+            <li class="list-inline-item"><i class="fa fa-whatsapp fa-lg"></i> +977 9849945843</li>
+        </ul>
+    </div>
+  </div>
+  
+  <div id="gallery" class="container-fluid slide bg-dark">
+    <div id="slides" class="carousel" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#slides" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#slides" data-bs-slide-to="1"></button>
+        </div>
+        <div class="carousel-inner";>
+            <div class="carousel-item active">
+                <img src="assets/img/GMT.JPG" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h2>Great Machhapuchre Trek</h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/slide2.JPG" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h2>Hello from Himalayas!</h2>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#slides" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#slides" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            </button>
+    </div>
+  </div>
+  
+  <div id="experiences" class="container-fluid bg-dark text-dark" style="padding:100px 20px;">
+    <div class="page-header" style="padding-left: 200px; padding-right: 200px;">
+        <h1 class="text-center pb-4 text-white">Experiences</h1>
+        <ul class="timeline">
+            <li class="timeline-badge">
+            <div class="timeline-panel">
+                <div class="timeline-heading">
+                    <h4 class="timeline-title">
+                        Support & Implementation Engineer
+                    </h4>
+                    <p><small class="text-muted">2022-2023</small></p>
+                    <img src="https://sanjokbhatta.com.np/wp-content/uploads/2024/01/clusus.png" class="img-fluid" style="width: 25%; margin-top: -20px;">
+                    <div class="timeline-body">
+                        Clusus Information Solution Pvt. Ltd.
+                    </div>
+                </div>
+            </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                            IT Manager
+                        </h4>
+                        <p><small class="text-muted">2020-2022</small></p>
+                        <img src="https://sanjokbhatta.com.np/wp-content/uploads/2022/05/jnt.png" class="img-fluid pb-1" style="width: 25%;">
+                        <div class="timeline-body">
+                            J&T Associates Pvt. Ltd.
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-badge">
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                            IT Officer
+                        </h4>
+                        <p><small class="text-muted">2018-2020</small></p>
+                        <img src="https://sanjokbhatta.com.np/wp-content/uploads/2022/05/kantipurdental.png" class="img-fluid pb-1" style="width: 25%;">
+                        <div class="timeline-body">
+                            Kantipur Dental College Teaching Hospital & Research Center
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="timeline-title">
+                            Senior Assistant Technical Support
+                        </h4>
+                        <p><small class="text-muted">2014-2017</small></p>
+                        <img src="https://sanjokbhatta.com.np/wp-content/uploads/2022/05/subisu.png" class="img-fluid pb-1" style="width: 25%;">
+                        <div class="timeline-body">
+                            Subisu Cablenet Pvt. Ltd.
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+  </div>
+<div class="container-fluid bg-dark p-3"></div>
+</body>
+</html>
